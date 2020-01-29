@@ -6,7 +6,7 @@ import Guide from './components/Guide';
 import ProjectSelect from './components/ProjectSelect';
 import ModuleSelect from './components/ModuleSelect';
 
-import {projects, modules} from './exampleData';
+import {projects} from './exampleData';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,13 +14,30 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
     color: theme.palette.text.secondary,
   },
 }));
 
 export default() => {
   const classes = useStyles();
+
+  const [activeProject, setActiveProject] = React.useState(projects[0]);
+
+  const handleChangeProject = id => {
+    setActiveProject(projects[id]);
+    setProjectModules(projects[id].availableModules)
+  }
+
+  const [projectModules, setProjectModules] = React.useState(projects[0].availableModules)
+
+  const [modulesState, setModulesState] = React.useState({
+    p1: true,
+    p2: false,
+  });
+
+  const handleModulesChange = name => event => {
+    setModulesState({ ...modulesState, [name]: event.target.checked });
+  };
 
   return (
     <div style={{background: '#E2E8F0', minHeight:'100vh'}}>
@@ -29,17 +46,17 @@ export default() => {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.paper}>
-              <ProjectSelect projects={projects}/>
+              <ProjectSelect projects={projects} handleChangeProject={handleChangeProject}/>
             </Paper>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.paper}>
-              <ModuleSelect modules={modules}/>
+              <ModuleSelect projectModules={projectModules} modulesState={modulesState} handleModulesChange={handleModulesChange}/>
             </Paper>
           </Grid>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <Guide projects={projects} modules={modules}/>
+              <Guide projects={projects} activeProject={activeProject}/>
             </Paper>
           </Grid>
         </Grid>
