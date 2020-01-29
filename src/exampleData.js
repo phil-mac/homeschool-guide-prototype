@@ -2,9 +2,10 @@ export const modules = [
     {
         title: "Business Basics 1",
         objectives: [
-            "Student understand the terms Costs and Revnue and can provide examples",
+            "Student understands the terms Costs and Revenue and can provide examples",
             "Student understands that Profit = Revenue - Costs",
         ],
+        instructions:"..."
     },
     {
         title: "Multiplication 3",
@@ -12,24 +13,35 @@ export const modules = [
             "Multiplication 3, objective 1",
             "Multiplication 3, objective 2",
         ],
+        instructions:"..."
     },
     {
         title: "Subtraction 3: Two-Digit Numbers",
         objectives: [
             "Subtraction 3, objective",
         ],
+        instructions:"..."
+    },
+    {
+        title: "Subtraction 4: Negative Numbers",
+        objectives: [
+            "Subtraction 4, objective",
+        ],
+        instructions:"..."
     },
     {
         title: "Persuasive Writing 1",
         objectives: [
             "Persuasive Writing 1, objective",
         ],
+        instructions:"..."
     },
     {
         title: "Design 2: Basic Illustrations",
         objectives: [
             "Design 2, objective",
         ],
+        instructions:"..."
     },
 ]
 
@@ -41,6 +53,8 @@ export const projects = [
             modules[0],
             modules[1],
             modules[2],
+            modules[3],
+            modules[4],
         ],
         challenge: "Design and develop a business plan for a store that sells physical goods, and pitch it to your peers on Primer",
         objectives:[
