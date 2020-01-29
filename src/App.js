@@ -21,23 +21,23 @@ const useStyles = makeStyles(theme => ({
 export default() => {
   const classes = useStyles();
 
-  const [activeProject, setActiveProject] = React.useState(projects[0]);
+  const [activeProject, setActiveProject] = React.useState(projects[0])
 
   const handleChangeProject = id => {
-    setActiveProject(projects[id]);
-    setProjectModules(projects[id].availableModules)
+    setActiveProject(projects[id])
+    setProjectModules(projects[id].contentModules)
+    setActiveModules([])
   }
 
-  const [projectModules, setProjectModules] = React.useState(projects[0].availableModules)
+  const [projectModules, setProjectModules] = React.useState(projects[0].contentModules)
 
-  const [modulesState, setModulesState] = React.useState({
-    p1: true,
-    p2: false,
-  });
+  const [activeModules, setActiveModules] = React.useState([]);
 
-  const handleModulesChange = name => event => {
-    setModulesState({ ...modulesState, [name]: event.target.checked });
-  };
+  const handleSetModules = selectedModules => {
+    setActiveModules(projectModules.filter(contentModule => (
+      selectedModules[contentModule.title]
+    )))
+  }
 
   return (
     <div style={{background: '#E2E8F0', minHeight:'100vh'}}>
@@ -51,12 +51,12 @@ export default() => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Paper className={classes.paper}>
-              <ModuleSelect projectModules={projectModules} modulesState={modulesState} handleModulesChange={handleModulesChange}/>
+              <ModuleSelect projectModules={projectModules} activeProject={activeProject} handleSetModules={handleSetModules}/>
             </Paper>
           </Grid>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <Guide projects={projects} activeProject={activeProject}/>
+              <Guide projects={projects} activeProject={activeProject} activeModules={activeModules}/>
             </Paper>
           </Grid>
         </Grid>

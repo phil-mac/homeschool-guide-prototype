@@ -24,7 +24,7 @@ export default(props) => {
         <FormControl component="fieldset" className={classes.formControl}>
             <RadioGroup aria-label="project" name="project1" value={activeProjectId} onChange={handleChangeProject}>
                 {props.projects.map((project, index) => (
-                    <FormControlLabel value={`${project.id}`} control={<Radio/>} label={project.title} />
+                    <FormControlLabel value={`${project.id}`} control={<Radio/>} label={project.title} key={index}/>
                 ))}
             <FormControlLabel
                 value="disabled"

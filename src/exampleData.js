@@ -8,10 +8,8 @@ export const projects = [
     {
         id: 0,
         title: "business",
-        requiredModules: [
+        contentModules: [
             modules[0],
-        ],
-        availableModules: [
             modules[1],
             modules[2],
         ]
@@ -19,20 +17,14 @@ export const projects = [
     {
         id: 1,
         title: "zoo",
-        requiredModules: [
-            modules[0],
-        ],
-        availableModules: [
+        contentModules: [
             modules[1],
         ]
     },
     {
         id: 2,
         title: "journalist",
-        requiredModules: [
-            modules[1],
-        ],
-        availableModules: [
+        contentModules: [
             modules[2],
         ]
     },

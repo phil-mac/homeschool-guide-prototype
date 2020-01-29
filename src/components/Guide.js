@@ -13,8 +13,8 @@ export default(props) => {
         <Typography variant='h6'>Guide Preview</Typography>
         <Divider />
         <Typography variant='h3'>{props.activeProject.title}</Typography>
-        {props.activeProject.availableModules.map(learningModule => (
-            <Typography variant='h5'>{learningModule.title}</Typography>
+        {props.activeModules.map((learningModule, index) => (
+            <Typography variant='h5' key={index}>{learningModule.title}</Typography>
         ))}
 
         

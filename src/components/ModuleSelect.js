@@ -13,9 +13,24 @@ const useStyles = makeStyles(theme => ({
 
 export default(props) => {
   const classes = useStyles();
-  
 
-//   const { gilad, jason, antoine } = props.modulesState;
+  const [modulesState, setModulesState] = React.useState({});
+
+  const handleModulesChange = name => event => {
+    const updatedModules = { ...modulesState, [name]: event.target.checked }
+    console.log(updatedModules)
+    setModulesState(updatedModules)
+    props.handleSetModules(updatedModules)
+  };
+
+  React.useEffect(() => {
+    console.log('reset modules')
+    const moduleStatus = {};
+    props.projectModules.forEach(contentModule => {
+        moduleStatus[contentModule.title] = false;
+    })
+    setModulesState(moduleStatus)
+  }, [props.activeProject])
 
   return (
     <div>
@@ -23,10 +38,10 @@ export default(props) => {
         <Typography variant='h6'>Select Multiple to apply to Project</Typography>
         <FormControl component="fieldset" className={classes.formControl}>
             <FormGroup>
-                {props.projectModules.map((learningModule, index) => (
+                {props.projectModules.map((contentModule, index) => (
                     <FormControlLabel
-                    control={<Checkbox checked={props.modulesState[learningModule.title]} onChange={props.handleModulesChange(learningModule.title)} value={learningModule.title} />}
-                    label={learningModule.title}
+                    control={<Checkbox checked={modulesState[contentModule.title]} onChange={handleModulesChange(contentModule.title)} value={contentModule.title} />}
+                    label={contentModule.title} key={index}
                 />
                 ))}
             </FormGroup>
