@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Typography, Divider } from '@material-ui/core';
+import { makeStyles, Typography, Divider, Button } from '@material-ui/core';
 
 import ContentModulePanel from './ContentModulePanel'
 
@@ -72,8 +72,13 @@ export default({activeProject, activeModules}) => {
                     : <></>
                 
             ))}
+            <Button variant="contained" color="primary" className={classes.p}>Upload Artifact</Button>
             </>
         ))}
+
+        <Typography variant='h5' className={classes.h5}>Reflect</Typography>
+        <Typography variant='body1' className={classes.p}>{activeProject.reflect}</Typography>
+        <Button variant="contained" color="primary" className={classes.p}>Upload Additional Artifacts</Button>
     </div>
   );
 }

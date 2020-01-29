@@ -55,6 +55,7 @@ export const projects = [
             modules[2],
             modules[3],
             modules[4],
+            modules[5],
         ],
         challenge: "Design and develop a business plan for a store that sells physical goods, and pitch it to your peers on Primer",
         objectives:[
@@ -122,7 +123,7 @@ export const projects = [
                 ],
             },
             {
-                title: "Idea and Vision",
+                title: "Advertisement",
                 steps: [
                     {
                         instructions: "Tell your student they need to come up with an advertisement for their business. Brainstorm some ideas with them for a written and hand-drawn advertisement.",
@@ -148,7 +149,7 @@ export const projects = [
                 ],
             },
         ],
-        reflect: "Have your student review their work from this project. See if they would like to change anything or anything additional. Upload any new artifacts they create.",
+        reflect: "Have your student review their work from this project and discuss what went well and what did not. See if they would like to change anything artifacts or create new ones. Upload any new artifacts they create.",
     },
     {
         id: 1,
