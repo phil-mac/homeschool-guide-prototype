@@ -1,10 +1,36 @@
 export const modules = [
-    {title: "Business Basics 1"},
-    {title: "Multiplication 3"},
-    {title: "Subtraction 3: Two-Digit Numbers"},
-    {title: "Subtraction 4: Negative Numbers"},
-    {title: "Persuasive Writing 1"},
-    {title: "Design 2: Basic Illustrations"},
+    {
+        title: "Business Basics 1",
+        objectives: [
+            "Student understand the terms Costs and Revnue and can provide examples",
+            "Student understands that Profit = Revenue - Costs",
+        ],
+    },
+    {
+        title: "Multiplication 3",
+        objectives: [
+            "Multiplication 3, objective 1",
+            "Multiplication 3, objective 2",
+        ],
+    },
+    {
+        title: "Subtraction 3: Two-Digit Numbers",
+        objectives: [
+            "Subtraction 3, objective",
+        ],
+    },
+    {
+        title: "Persuasive Writing 1",
+        objectives: [
+            "Persuasive Writing 1, objective",
+        ],
+    },
+    {
+        title: "Design 2: Basic Illustrations",
+        objectives: [
+            "Design 2, objective",
+        ],
+    },
 ]
 
 export const projects = [
@@ -16,13 +42,13 @@ export const projects = [
             modules[1],
             modules[2],
         ],
-        challenge: "Design, develop and pitch a business plan to your peers on Primer for a store that sells physical goods",
-        learningObjectives:[
+        challenge: "Design and develop a business plan for a store that sells physical goods, and pitch it to your peers on Primer",
+        objectives:[
             "Student takes inititive, coming up with own idea for a product to sell",
             "Student is organized, and comes up with a cohesive business plan",
-            "Student Presents the plan in an appealing fashion"
         ],
         supplies: "Paper, Colored Pencils",
+        prepare: "Take time to talk over the objectives with your student, and ensure you have the needed supplies.",
         parts:[
             {
                 title: "Idea and Vision",

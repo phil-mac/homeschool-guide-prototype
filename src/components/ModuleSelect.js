@@ -34,7 +34,7 @@ export default(props) => {
 
   return (
     <div>
-        <Typography variant='h4'>Learning Modules</Typography>
+        <Typography variant='h4'>Content Modules</Typography>
         <Typography variant='h6'>Select Multiple to apply to Project</Typography>
         <FormControl component="fieldset" className={classes.formControl}>
             <FormGroup>
