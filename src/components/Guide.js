@@ -17,7 +17,11 @@ const useStyles = makeStyles({
         margin: '20px 10px'
     },
     p:{
-        margin: '10px 20px'
+        margin: '10px 20px',
+    },
+    p2:{
+        margin: '10px 20px',
+        color: '#2B6CB0'
     }
   });
 
@@ -29,7 +33,9 @@ export default({activeProject, activeModules}) => {
   React.useEffect(() => {
     let objectives = [...activeProject.objectives]
     activeModules.forEach(contentModule => {
-        objectives = [...objectives, ...contentModule.objectives]
+        contentModule.parts.forEach(part => {
+            objectives = [...objectives, part.objective]
+        })
     })
     setObjectives(objectives)
   },[activeProject, activeModules])
@@ -42,8 +48,8 @@ export default({activeProject, activeModules}) => {
         <Typography variant='body1' className={classes.p}>{activeProject.challenge}</Typography>
 
         <Typography variant='h5' className={classes.h5}>Learning Objectives</Typography>
-        {objectives.map(objective => (
-            <Typography variant='body1' className={classes.p}>{objective}</Typography>
+        {objectives.map((objective, i) => (
+            <Typography variant='body1' className={i < 2 ? classes.p : classes.p2} key={i}>{objective} </Typography>
         ))}
 
         <Typography variant='h5' className={classes.h5}>Prepare</Typography>
@@ -52,24 +58,24 @@ export default({activeProject, activeModules}) => {
         <Typography variant='body1' className={classes.p}>{activeProject.supplies}</Typography>
 
         <Typography variant='h5' className={classes.h5}>Do</Typography>
-        {activeProject.parts.map((part, index) => (
-            <>
-            <Typography variant='h6' className={classes.h6}>Step {index+1}: {part.title}</Typography>
-            {part.steps.map(step => (
+        {activeProject.parts.map((part, i) => (
+            <div key={i}>
+            <Typography variant='h6' className={classes.h6}>Step {i+1}: {part.title}</Typography>
+            {part.steps.map((step, j) => (
                 (step.contentModule === undefined) 
-                ? <Typography variant='body1' className={classes.p}>{step.instructions}</Typography>
+                ? <Typography variant='body1' className={classes.p} key={j}>{step.instructions}</Typography>
                 : (activeModules.includes(step.contentModule)) 
-                    ? <div>
-                        <Typography variant='body1' className={classes.p}>{step.instructions}</Typography>
+                    ? <div key={j}>
+                        <Typography variant='body1' className={classes.p} style={{color:'#2B6CB0'}}>{step.instructions}</Typography>
                         <div className={classes.p}>
                             <ContentModulePanel contentModule={step.contentModule} />
                         </div>
                       </div>
-                    : <></>
+                    : <div key={j}></div>
                 
             ))}
             <Button variant="contained" color="primary" className={classes.p}>Upload Artifact</Button>
-            </>
+            </div>
         ))}
 
         <Typography variant='h5' className={classes.h5}>Reflect</Typography>

@@ -1,68 +1,152 @@
 export const modules = [
     {
         title: "Business Basics 1",
-        objectives: [
-            "Student understands the terms Costs and Revenue and can provide examples",
-            "Student understands that Profit = Revenue - Costs",
+        parts: [
+            {
+                objective: "Student understands the terms Costs and Revenue and can provide examples of each in different contexts",
+                explain: "Explain to your students that Costs are all the money that a business needs to spend on it's supplies. Explain that Revenue is the money a company makes from it's customers - in the case of a physical store, from selling goods.",
+                follow: "Take turns with your student coming up examples of stores, and naming some costs and revenue sources for those businesses. Do this for 6 example stores.",
+                practice: "Give your student time to work on their own and come up with 10 examples of costs and revenue sources. This could be 10 examples for 1 busines, or 1 example for 10 different businesses.",
+            },
+            {
+                objective: "Student understands that Profit = Revenue - Costs, and can come up with examples for various businesses",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Multiplication 3",
-        objectives: [
-            "Multiplication 3, objective 1",
-            "Multiplication 3, objective 2",
+        parts: [
+            {
+                objective: "Student understands how multiplication can be achieved by doing addition a repeated number of times",
+                explain: "Explain that 2 + 2 + 2 is adding 2, 3 times. This is the same as multiplication of 2 x 3. You could just add things, but if your working on a project multiplication will be much faster than adding something to itself several time.",
+                follow: "Show your student how to calculate 2 times 4. Have your student calculate 2 time 5 by using repeated addition. Come up with more repeated addition problems to do with your student.",
+                practice: "Have your student complete this work sheet on multiplication via repeated addition.",
+            },
+            {
+                objective: "Student can multiply digits 2 through 4 by eachother",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Subtraction 3: Two-Digit Numbers",
-        objectives: [
-            "Subtraction 3, objective",
+        parts: [
+            {
+                objective: "Subtraction 3, objective",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "2",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Subtraction 4: Negative Numbers",
-        objectives: [
-            "Subtraction 4, objective",
+        parts: [
+            {
+                objective: "Subtraction 4, objective",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "2",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Persuasive Writing 1",
-        objectives: [
-            "Persuasive Writing 1, objective",
+        parts: [
+            {
+                objective: "Persuasive Writing 1, objective",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "2",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Design 2: Basic Illustrations",
-        objectives: [
-            "Design 2, objective",
+        parts: [
+            {
+                objective: "Student can draw a basic perspective scene, making a simple 3D house",
+                explain: "Draw a simple rail road track perspective with two lines, and make a stick figure at diffent points to illustrate scale. Next, show your student how to draw a cube by using perspective.",
+                follow: "Work with your student to draw a perspective scene and help them if they get stuck.",
+                practice: "Have your student draw a simple 3D house on their own",
+            },
+            {
+                objective: "Student can use sketching to practice drawing a line by drawing several lines where the average is what they'd like",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "Student can sketch animals by making circles to represent their basic shape, then adding detail.",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Animals: Habitats and Diets",
-        objectives: [
-            "Design 2, objective",
+        parts: [
+            {
+                objective: "Design 2, objective",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "2",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
     {
         title: "Fractions 1",
-        objectives: [
-            "Fractions 1, objective",
+        parts: [
+            {
+                objective: "Fractions 1, objective",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
+            {
+                objective: "2",
+                explain: "...",
+                follow: "...",
+                practice: "...",
+            },
         ],
-        instructions:"..."
     },
 ]
 
 export const projects = [
     {
         id: 0,
-        title: "Business Plan: Physical Store 1",
+        title: "Business Plan: Physical Store",
         contentModules: [
             modules[0],
             modules[1],
@@ -215,7 +299,7 @@ export const projects = [
                 title: "Food Math",
                 steps: [
                     {
-                        instructions: "Explain to your student that they need to plan how much food to get for their habitat. When an one of your animals eats their share of the food, what fraction is left? Before working through this, complete this learning module on fractions:",
+                        instructions: "Explain to your student that they need to plan how much food to get for their habitat. When one of your animals eats their share of the food, what fraction is left? Before working through this, complete this learning module on fractions:",
                         contentModule: modules[7],
                     },
                     {
@@ -227,7 +311,7 @@ export const projects = [
                     },
                     
                     {
-                        instructions: "Have your student ork out on a sheet of paper, along with the work on fractions, how much food to get if they double, tripple, and quadruple the number of animals in their habitat. Document this with a photo of the math work.",
+                        instructions: "Have your student work out on a sheet of paper how much food they will need if they double, tripple, and quadruple the number of animals in their habitat. Document this with a photo of the math work.",
                     },
                 ],
             },

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Container, Paper, Grid, makeStyles, Box, Drawer, CssBaseline, AppBar, Toolbar, Divider, Typography} from '@material-ui/core';
 
-import TopBar from './components/TopBar';
 import Guide from './components/Guide';
 import ProjectSelect from './components/ProjectSelect';
 import ModuleSelect from './components/ModuleSelect';
@@ -24,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background: 'lightgrey'
+    background: '#EDF2F7'
   },
   toolbar: theme.mixins.toolbar,
   content: {
@@ -62,7 +61,6 @@ export default() => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      {/* <TopBar className={classes.appBar}/> */}
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
@@ -78,8 +76,8 @@ export default() => {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} style={{background: 'lightgrey' }}>
-          <Typography variant='h5' className={classes.content} style={{background: 'lightgrey' }}>Guide Builder</Typography>
+        <div className={classes.toolbar} style={{background: '#EDF2F7' }}>
+          <Typography variant='h5' className={classes.content} style={{background: '#EDF2F7' }}>Guide Builder</Typography>
         </div>
         <Paper className={classes.paper}>
           <ProjectSelect projects={projects} handleChangeProject={handleChangeProject}/>
@@ -93,36 +91,5 @@ export default() => {
         <Guide projects={projects} activeProject={activeProject} activeModules={activeModules}/>
       </main>
     </div>
-
-    // <div style={{background: '#E2E8F0', minHeight:'100vh'}}>
-    //   <TopBar/>
-    //   <Container maxWidth='lg' style={{paddingTop: '20px'}}>
-    //     <Grid container>
-    //       <Grid container item sm={3}>
-    //         <Box position="fixed">
-    //           {/* <Grid container spacing={2}> */}
-    //             <Grid item xs={12} sm={6}>
-    //               <Paper className={classes.paper}>
-    //                 <ProjectSelect projects={projects} handleChangeProject={handleChangeProject}/>
-    //               </Paper>
-    //             </Grid>
-    //             <Grid item xs={12} sm={6}>
-    //               <Paper className={classes.paper}>
-    //                 <ModuleSelect projectModules={projectModules} activeProject={activeProject} handleSetModules={handleSetModules}/>
-    //               </Paper>
-    //             </Grid>
-    //           {/* </Grid> */}
-    //         </Box>
-    //       </Grid>
-    //       <Grid container item sm={9}>
-    //         <Grid item xs={12}>
-    //           <Paper className={classes.paper}>
-    //             <Guide projects={projects} activeProject={activeProject} activeModules={activeModules}/>
-    //           </Paper>
-    //         </Grid>
-    //       </Grid>
-    //     </Grid>
-    //   </Container>
-    // </div>
   );
 }

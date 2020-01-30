@@ -18,19 +18,12 @@ export default(props) => {
 
   const handleModulesChange = name => event => {
     const updatedModules = { ...modulesState, [name]: event.target.checked }
-    console.log(updatedModules)
     setModulesState(updatedModules)
     props.handleSetModules(updatedModules)
   };
 
   React.useEffect(() => {
-    console.log('reset modules')
-    const moduleStatus = {};
-    props.projectModules.forEach(contentModule => {
-        moduleStatus[contentModule.title] = false;
-    })
-    setModulesState(moduleStatus)
-    console.log(moduleStatus);
+    setModulesState({})
   }, [props.activeProject])
 
   return (
@@ -41,7 +34,7 @@ export default(props) => {
             <FormGroup>
                 {props.projectModules.map((contentModule, index) => (
                     <FormControlLabel
-                    control={<Checkbox checked={modulesState[contentModule.title]} onChange={handleModulesChange(contentModule.title)} value={contentModule.title} />}
+                    control={<Checkbox checked={modulesState[contentModule.title] ? true : false} onChange={handleModulesChange(contentModule.title)} value={contentModule.title} />}
                     label={contentModule.title} key={index}
                 />
                 ))}

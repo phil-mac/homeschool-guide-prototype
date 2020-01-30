@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles, Typography, FormControl, RadioGroup, Radio, FormControlLabel } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
 export default(props) => {
   const classes = useStyles();
 
-  const [activeProjectId, setActiveProjectId] = React.useState('');
+  const [activeProjectId, setActiveProjectId] = React.useState("0");
 
   const handleChangeProject = event => {
     setActiveProjectId(event.target.value);

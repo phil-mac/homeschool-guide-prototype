@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core';
+import { makeStyles, Typography, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Divider } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
@@ -12,6 +12,18 @@ const useStyles = makeStyles(theme => ({
     },
     details:{
         flexDirection: "column",
+    },
+    h3:{
+        margin: '20px 0'
+    },
+    h5:{
+        margin: '20px 0'
+    },
+    h6:{
+        margin: '20px 10px'
+    },
+    p:{
+        margin: '10px 20px'
     }
 }));
 
@@ -19,7 +31,7 @@ export default({contentModule}) => {
   const classes = useStyles();
 
   return (
-    <ExpansionPanel style={{color: 'grey'}}>
+    <ExpansionPanel>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -28,13 +40,23 @@ export default({contentModule}) => {
           <Typography className={classes.heading}>{contentModule.title}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.details}>
-            <Typography variant='h6' className={classes.h6}>Module Objectives</Typography>
-            {contentModule.objectives.map((objective, index) => (
-                <Typography key={index} variant='body1'>{objective}</Typography>
+            <Typography variant='h5' className={classes.h5}>Module Objectives Overview</Typography>
+            {contentModule.parts.map((part, index) => (
+                <Typography key={index} variant='body1' className={classes.p}>{part.objective}</Typography>
             ))}
-            <br/>
-            <Typography variant='h6' className={classes.h6}>Instructions</Typography>
-            <Typography variant='body1'>{contentModule.instructions}</Typography>
+            <Divider/>
+            {contentModule.parts.map((part, index) => (
+              <div key={index}>
+                <Typography variant='h5' className={classes.h5}>{part.objective}</Typography>
+                <Typography variant='h6' className={classes.h6}>Explain</Typography>
+                <Typography variant='body1' className={classes.p}>{part.explain}</Typography>
+                <Typography variant='h6' className={classes.h6}>Follow Along</Typography>
+                <Typography variant='body1' className={classes.p}>{part.follow}</Typography>
+                <Typography variant='h6' className={classes.h6}>Practice</Typography>
+                <Typography variant='body1' className={classes.p}>{part.practice}</Typography>
+
+              </div>
+            ))}
         </ExpansionPanelDetails>
       </ExpansionPanel>
   );
