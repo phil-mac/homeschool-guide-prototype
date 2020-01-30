@@ -7,14 +7,14 @@ import ModuleSelect from './components/ModuleSelect';
 
 import {projects} from './exampleData';
 
-const drawerWidth = 420;
+const drawerWidth = '30%';
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex"
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: `calc(100% - ${drawerWidth})`,
     marginLeft: drawerWidth
   },
   drawer: {
