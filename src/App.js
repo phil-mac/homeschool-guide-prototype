@@ -8,7 +8,7 @@ import ModuleSelect from './components/ModuleSelect';
 
 import {projects} from './exampleData';
 
-const drawerWidth = 340;
+const drawerWidth = 420;
 
 const useStyles = makeStyles(theme => ({
   root: {

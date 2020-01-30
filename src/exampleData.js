@@ -43,12 +43,26 @@ export const modules = [
         ],
         instructions:"..."
     },
+    {
+        title: "Animals: Habitats and Diets",
+        objectives: [
+            "Design 2, objective",
+        ],
+        instructions:"..."
+    },
+    {
+        title: "Fractions 1",
+        objectives: [
+            "Fractions 1, objective",
+        ],
+        instructions:"..."
+    },
 ]
 
 export const projects = [
     {
         id: 0,
-        title: "Business Plan - Physical Store 1",
+        title: "Business Plan: Physical Store 1",
         contentModules: [
             modules[0],
             modules[1],
@@ -70,8 +84,7 @@ export const projects = [
                 steps: [
                     {
                         instructions: "Have your student come up with an idea for a store they could run that sells physical goods. It’s okay to give some suggestions of standard stores if they need help coming up with ideas.",
-                        contentModule: false,
-                        artifact: false,
+                    
                     },
                     {
                         instructions: "(Optional) Walk or Drive around town to look at different stores and help your student come up with ideas for their business plan",
@@ -152,15 +165,92 @@ export const projects = [
         reflect: "Have your student review their work from this project and discuss what went well and what did not. See if they would like to change anything artifacts or create new ones. Upload any new artifacts they create.",
     },
     {
-        id: 1,
-        title: "zoo",
+        id: 1 ,
+        title: "Wild Animal Habitat Design",
         contentModules: [
             modules[1],
-        ]
+            modules[5],
+            modules[6],
+            modules[7],
+        ],
+        challenge: "Design a habitat that could shelter a rescued wild animal, and plan what meals it will get. The animal can be anything you like, living or extinct. Share your design with your peers on Primer.",
+        objectives:[
+            "Student is self-starting, deciding on an animal and coming up with ideas for its habitat",
+            "Student pays attention to detail, and remembers to provide everything the animal needs to live and be happy",
+        ],
+        supplies: "Paper, Colored Pencils",
+        prepare: "Talk over the objectives with your student, and ensure you have the needed supplies.",
+        parts:[
+            {
+                title: "Animal Research",
+                steps: [
+                    {
+                        instructions: "Tell your student the next step is to learn about different animals, their habitats and what they eat. Complete the following content module:",
+                        contentModule: modules[6],
+                    },
+                    {
+                        instructions: "(Optional) Visit a zoo or aquarium, and have your student take notes on the habitats of 10 different animals. If there are zoo personal to talk with, have your student ask them about animal's diets.",
+                    },
+                    {
+                        instructions: "Determine which animal you will design a habitat for, and gather any resources needed to learn about that animal's habitat and diet. Record a photo of your research.",
+                    },
+                ],
+            },
+            {
+                title: "Habitat Design",
+                steps: [
+                    {
+                        instructions: "Have your student plan out the habitat for their chosen animal. Consider access to shelter, water, food, and the number of animals per habitat.",
+                    },
+                    {
+                        instructions: "Tell your student their next task will be to draw their habitat, but first they should comeplete a module on illustration.",
+                        contentModule: modules[5],
+                    },
+                    {
+                        instructions: "Have your student draw the habitat they've designed and plan",
+                    },
+                ],
+            },
+            {
+                title: "Food Math",
+                steps: [
+                    {
+                        instructions: "Explain to your student that they need to plan how much food to get for their habitat. When an one of your animals eats their share of the food, what fraction is left? Before working through this, complete this learning module on fractions:",
+                        contentModule: modules[7],
+                    },
+                    {
+                        instructions: "Your animals need to be kept alive by providing them enough food! Decide a number of boxes of food you recieve each day, with the number of animals in your habitat, what fraction will each animal get?",
+                    },
+                    {
+                        instructions: "Tell your student they need to figure how out how many boxes of food to get if they get more animals. First, complete this module on multiplication:",
+                        contentModule: modules[1],
+                    },
+                    
+                    {
+                        instructions: "Have your student ork out on a sheet of paper, along with the work on fractions, how much food to get if they double, tripple, and quadruple the number of animals in their habitat. Document this with a photo of the math work.",
+                    },
+                ],
+            },
+        ],
+        reflect: "Have your student review their work from this project and discuss what went well and what did not. See if they would like to change anything artifacts or create new ones. Upload any new artifacts they create.",
     },
     {
         id: 2,
-        title: "journalist",
+        title: "Investigative Journalist: New Space",
+        contentModules: [
+            modules[2],
+        ]
+    },
+    {
+        id: 3,
+        title: "Engineering Challenge: Gondola Express",
+        contentModules: [
+            modules[2],
+        ]
+    },
+    {
+        id: 4,
+        title: "Government Agent: Code Breaker",
         contentModules: [
             modules[2],
         ]

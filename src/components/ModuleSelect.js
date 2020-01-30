@@ -30,6 +30,7 @@ export default(props) => {
         moduleStatus[contentModule.title] = false;
     })
     setModulesState(moduleStatus)
+    console.log(moduleStatus);
   }, [props.activeProject])
 
   return (

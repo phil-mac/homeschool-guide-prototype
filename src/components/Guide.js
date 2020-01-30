@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         margin: '20px 10px'
     },
     p:{
-        margin: '5px 20px'
+        margin: '10px 20px'
     }
   });
 
@@ -36,12 +36,8 @@ export default({activeProject, activeModules}) => {
 
   return (
     <div >
-        <Typography variant='h6'>Guide Preview</Typography>
-        <Divider />
         <Typography variant='h3' className={classes.h3}>{activeProject.title}</Typography>
-        {/* {activeModules.map((learningModule, index) => (
-            <Typography variant='h5' key={index}>{learningModule.title}</Typography>
-        ))} */}
+        <Divider />
         <Typography variant='h5' className={classes.h5}>Challenge</Typography>
         <Typography variant='body1' className={classes.p}>{activeProject.challenge}</Typography>
 
